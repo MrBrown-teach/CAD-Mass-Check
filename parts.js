@@ -18,11 +18,15 @@
      drawing   (required) filename inside drawings/
      material  (required) EXACT material name students must apply in Fusion
      massOz    the correct mass in ouncemass. Plain number.
-     massKey   OPTIONAL scrambled version of massOz (see teacher panel).
-               If massKey is present, massOz is ignored. Use this if you
-               don't want the answer readable in view-source.
+     massKey   OPTIONAL scrambled version of massOz (see #teacher page).
+               If massKey is present, massOz is ignored.
      tolerance OPTIONAL percent override for this part. Defaults to
                SETTINGS.defaultTolerancePct below.
+     sheet     OPTIONAL sheet aspect ratio if this drawing is not the
+               size set in SETTINGS.sheetAspect. Common values:
+                 "17/11"    ANSI B  (Fusion's default landscape sheet)
+                 "11/8.5"   ANSI A / Letter landscape
+                 "22/17"    ANSI C
      level     OPTIONAL badge text, e.g. "Intro" / "Challenge"
      note      OPTIONAL line of guidance shown next to the drawing
 */
@@ -34,6 +38,10 @@ var SETTINGS = {
   unitLong: "ouncemass",
   defaultTolerancePct: 1.0,
 
+  // Sheet size most of your drawings use. Sets the shape of the viewer
+  // so the drawing fills it instead of floating in gray bars.
+  sheetAspect: "17/11",
+
   // true  -> a wrong answer says "too heavy" / "too light"
   // false -> a wrong answer only says "not correct"
   showDirection: true,
@@ -43,7 +51,19 @@ var SETTINGS = {
 };
 
 var PARTS = [
-   {
+
+  // ---- READY TO GO: fill in massOz from your own model, then delete this comment ----
+  // {
+  //   id: "block-01",
+  //   name: "Block 1 Challenge",
+  //   set: "Fusion Challenges",
+  //   level: "Intro",
+  //   drawing: "block-01.pdf",
+  //   material: "ABS Plastic",
+  //   massOz: 0.000
+  // },
+
+  {
     id: "sample-bracket",
     name: "Sample Bracket",
     set: "Getting Started",
@@ -51,28 +71,8 @@ var PARTS = [
     drawing: "sample-bracket.pdf",
     material: "Aluminum 6061",
     massOz: 2.188,
+    sheet: "11/8.5",
     note: "Demo part shipped with the tool. Delete it once you add your own."
-   }
-
-   ,{
-    id: "Block 1 Challenge",
-    name: "Block 1 Challenge",
-    set: "Getting Started",
-    level: "Intro",
-    drawing: "Block 1 Challenge Drawing v2.pdf",
-    material: "ABS Plastic",
-    massOz: 1.55094,
-    note: "Document is overdimensioned to allow for learning students"
-   }
-  // ,{
-  //   id: "plate-01",
-  //   name: "Base Plate",
-  //   set: "Unit 3 — Extrusions",
-  //   level: "Intro",
-  //   drawing: "plate-01.pdf",
-  //   material: "Steel, Mild",
-  //   massOz: 12.75,
-  //   tolerance: 2.0
-  // }
+  }
 
 ];

@@ -34,6 +34,7 @@ drawings/         one PDF per part
   material: "Aluminum 6061",         // exact material students must apply
   massOz: 12.75,                     // the correct mass in ouncemass
   tolerance: 1.5,                    // optional; overrides the global default
+  sheet: "11/8.5",                   // optional; only if this sheet size differs
   note: "Watch the fillet radius."   // optional hint shown by the drawing
 }
 ```
@@ -47,6 +48,7 @@ At the top of `parts.js`:
 | Setting | What it does |
 | --- | --- |
 | `defaultTolerancePct` | Percent window applied to every part unless overridden. Default `1.0`. |
+| `sheetAspect` | Aspect ratio of the sheet size you normally export. Default `"17/11"` (ANSI B, Fusion's default landscape sheet). The viewer takes this shape so drawings fill it instead of floating in gray bars. Override per part with `sheet`. |
 | `showDirection` | `true` tells a wrong answer whether they're too heavy or too light. Set `false` to only say "not correct". |
 | `displayDecimals` | Decimal places used when echoing masses back. Default `3`. |
 | `title` / `subtitle` | Header text. |
@@ -73,9 +75,14 @@ stops casual snooping, not a determined student.
 
 ## Notes
 
-- The PDF is embedded with `<object>`. Chrome and Chromebooks render it inline;
-  every part page also has an **Open full size** link that opens the PDF in its
-  own tab for zooming or printing.
+- The PDF is embedded with `<object>` and sized to the sheet's aspect ratio.
+  Every part page also has **Enlarge** (fills the screen, Esc or Close to exit)
+  and **New tab** (opens the raw PDF for zooming or printing). Students working
+  alongside Fusion will mostly live in Enlarge.
+- **Sheet size affects readability.** A drawing exported on an ANSI B sheet
+  renders about 30% smaller in the pane than the same views on a Letter/ANSI A
+  sheet. If a drawing looks cramped, exporting it on a smaller sheet is the
+  easiest fix — the views get bigger relative to the page.
 - The result panel stamps the student's name, the part name, the attempt
   number, and a timestamp, so a screenshot is self-identifying. The name field
   is honor-system — it is typed, not verified.
