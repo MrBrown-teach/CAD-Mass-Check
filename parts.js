@@ -55,6 +55,16 @@ var PARTS = [
     note: "Demo part shipped with the tool. Delete it once you add your own."
   }
 
+   {
+    id: "Block 1 Challenge",
+    name: "Block 1 Challenge",
+    set: "Getting Started",
+    level: "Intro",
+    drawing: "Block 1 Challenge Drawing v2.pdf",
+    material: "ABS Plastic",
+    massOz: 1.55094,
+    note: "Document is overdimensioned to allow for learning students"
+  }
   // ,{
   //   id: "plate-01",
   //   name: "Base Plate",
