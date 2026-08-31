@@ -51,17 +51,16 @@ var SETTINGS = {
 };
 
 var PARTS = [
-
-  // ---- READY TO GO: fill in massOz from your own model, then delete this comment ----
-  // {
-  //   id: "block-01",
-  //   name: "Block 1 Challenge",
-  //   set: "Fusion Challenges",
-  //   level: "Intro",
-  //   drawing: "block-01.pdf",
-  //   material: "ABS Plastic",
-  //   massOz: 0.000
-  // },
+  
+  {
+     id: "block-01",
+     name: "Block 1 Challenge",
+     set: "Fusion Challenges",
+     level: "Intro",
+     drawing: "block-01.pdf",
+     material: "ABS Plastic",
+     massOz: 1.55094
+   },
 
   {
     id: "sample-bracket",
