@@ -54,7 +54,7 @@ var PARTS = [
     note: "Demo part shipped with the tool. Delete it once you add your own."
    }
 
-   {
+   ,{
     id: "Block 1 Challenge",
     name: "Block 1 Challenge",
     set: "Getting Started",
