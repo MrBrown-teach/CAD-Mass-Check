@@ -43,8 +43,7 @@ var SETTINGS = {
 };
 
 var PARTS = [
-
-  {
+   {
     id: "sample-bracket",
     name: "Sample Bracket",
     set: "Getting Started",
@@ -53,7 +52,7 @@ var PARTS = [
     material: "Aluminum 6061",
     massOz: 2.188,
     note: "Demo part shipped with the tool. Delete it once you add your own."
-  }
+   }
 
    {
     id: "Block 1 Challenge",
@@ -64,7 +63,7 @@ var PARTS = [
     material: "ABS Plastic",
     massOz: 1.55094,
     note: "Document is overdimensioned to allow for learning students"
-  }
+   }
   // ,{
   //   id: "plate-01",
   //   name: "Base Plate",
